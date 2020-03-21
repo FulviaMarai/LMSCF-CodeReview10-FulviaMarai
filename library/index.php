@@ -11,12 +11,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 
-<script>
-$(function () {
-  $('[data-toggle="popover"]').popover()
-});
-</script>
-
 </head>
 <body>
   <div class="container">
@@ -48,25 +42,46 @@ $(function () {
             if($result-> num_rows > 0) { 
                 while($row = $result->fetch_assoc()) {
                    echo  "<tr>
-                    <td style='font-weight:bold' data-toggle='popover' data-placement='top' data-content='Do you want to know more about this title?'> ".$row['title']." </td>
-
-                    <td data-toggle='popover' data-placement='top' data-content='Do you want to know more about this author?'> ".$row['author']." </td>
-
-                    <td class='small' data-toggle='popover' data-placement='top' data-content='Do you want to know more about this publisher?'> ".$row['publisher']."(".$row['publish_date'].") </td>
-
+                    <td style='font-weight:bold'> <a href='show' data-toggle='modal' data-target='#myModal'>".$row['title']."</a> </td>
+                    <td> ".$row['author']." </td>
+                    <td> ".$row['publisher']."(".$row['publish_date'].") </td>
                     <td>" .$row['type']." </td>
                     <td>" .$row['ISBN']." </td>
 
-                        <td>
-                           <a href='update.php?id=" .$row['id']."'><button type='button' class='btn btn-outline-info btn-sm'>Edit</button></a>
-                           <a href='delete.php?id=" .$row['id']."'><button type='button'class='btn btn-outline-danger btn-sm'>Delete</button></a>
-
-                       </td>
-                   </tr>" ;
-               }
+                    <td> <a href='update.php?id=" .$row['id']."'><button type='button' class='btn btn-outline-info btn-sm'>Edit</button></a>
+                      <a href='delete.php?id=" .$row['id']."'><button type='button'class='btn btn-outline-danger btn-sm'>Delete</button></a></td>
+                          </tr>";
+            }
            } else  {
               echo  "<tr><td colspan='5'><center>No Data Avaliable</center></td></tr>";
            }
+
+   $sql = "SELECT * FROM media";
+      $result = $connect-> query($sql);
+
+            if($result-> num_rows > 0) { 
+                while($row = $result->fetch_assoc()) {
+
+       echo  '<div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">'.$row["title"].'</h4>
+                            </div>
+                            <div class="modal-body">
+                              <img src='.$row["cover"].' alt="cover" height="200px" >
+                              <p>'.$row["description"].'</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn  btn-outline-info btn-sm" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>';
+    }}
+
+
+
             ?>
            
        </tbody>
@@ -75,9 +90,34 @@ $(function () {
     <hr>
    <a href= "create.php"><button type="button" class='btn btn-outline-info btn-lg'> Add another book or media </button></a>
    <br>
+
+
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">".$row['title']."</h4>
+      </div>
+      <div class="modal-body">
+        <img src=".$row['cover']." alt="cover">
+        <p>".$row['description']."</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 </div>
 
 </div>
+
+
 
 </body>
 </html>
