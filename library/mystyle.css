@@ -1,0 +1,41 @@
+body { 
+  background-image: url("background.jpg");
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron {
+  height: 150px;
+  background-color: linen;
+  padding: 15px;
+  text-align: center;
+}
+
+.card {
+  width : 100%;
+  padding: 10px;
+  margin: auto;
+  background-color: ivory;
+  text-align: center
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+label {
+  font-weight: bold;
+}
+
+ .bt  {
+        width: 150px;
+      }
+
+input {
+  background-color: mintcream;
+  width: 300px;
+}
