@@ -27,19 +27,18 @@ if ($_GET['id']) {
   <div class="container">
     <br>
   <div class="jumbotron ">
-    <h1 class="display-4"> Delete Media </h1>
+    <h1 class="display-5"> Delete Media </h1>
   </div>
 
 <div class="card">
-<h3>Do you really want to delete this media?</h3>
+<h3>Do you really want to delete this media?</h3><br>
 <form action ="actions/a_delete.php" method="get">
 
    <input type="hidden" name= "id" value="<?php echo $data['id'] ?>" />
-   <button type="submit">Yes, delete it!</button >
-   <a href="index.php"><button type="button"> No,do not delete! </button ></a>
+   <button type="submit" class='btn btn-outline-danger btn-lg'>Yes, delete it!</button >
+   <a href="index.php"><button type="button" class='btn btn-outline-info btn-lg'> No,do not delete! </button ></a>
 </form>
 </div>
-
 </div>
 </body>
 </html>

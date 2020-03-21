@@ -16,6 +16,7 @@ if ($_GET) {
 
    $sql = "UPDATE media SET cover = '$cover', title = '$title', author = '$author', publisher = '$publisher', publish_date = '$publish_date', type = '$type', ISBN = '$ISBN', description = '$description' WHERE id = {$id}" ;
    if($connect->query($sql) === TRUE) {
+    
        echo  "<p>Successfully Updated</p>";
        echo "<a href='../update.php?id=" .$id."'><button type='button'>Back</button></a>";
        echo  "<a href='../index.php'><button type='button'>Home</button></a>";

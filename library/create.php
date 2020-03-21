@@ -16,7 +16,7 @@
   <div class="container">
     <br>
   <div class="jumbotron ">
-    <h1 class="display-4"> Add Media </h1>
+    <h1 class="display-5"> Add Media </h1>
   </div>
 
   <div class="card">
@@ -49,8 +49,8 @@
     <hr>
     <br>
         
-             <button type ="submit" class='btn btn-outline-info btn-lg'>Insert media</button>
-               <a href= "index.php"><button  type="button" class='btn btn-outline-info btn-lg' >Back to the main page</button></a>
+        <button type ="submit" class='btn btn-outline-danger btn-lg'>Insert media</button>
+        <a href= "index.php"><button  type="button" class='btn btn-outline-info btn-lg' >Back to the main page</button></a>
 
 
    </form>

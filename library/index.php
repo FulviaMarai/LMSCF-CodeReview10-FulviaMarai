@@ -22,31 +22,33 @@ $(function () {
   <div class="container">
     <br>
   <div class="jumbotron " >
-    <h1 class="display-4"> Welcome to the Big Virtual Library! </h1>
+    <h1 class="display-5"> Welcome to the Big Virtual Library! </h1>
   </div>
 
 <div class ="card">
-   <table class="table-responsive table-hover table-sm w-auto">
+   <table class="table-responsive table-hover table-sm w-auto my-custom-scrollbar  ">
        <thead>
-           <tr>
+           <tr class="text-info">
               <th scope="col" class="th-sm">Title</th>
               <th scope="col" class="th-sm">Author</th>
               <th scope="col" class="th-sm">Publisher</th>
-              <th scope="col" class="th-sm"> Type </th>
+              <th scope="col" class="th-sm">Type </th>
               <th scope="col" class="th-sm"> ISBN code </th>
            </tr>
           
        </thead>
        <tbody>
 
-        <?php
-           $sql = "SELECT * FROM media WHERE available = 0";
-           $result = $connect->query($sql);
 
-            if($result-> num_rows > 0) {
+      <?php 
+
+      $sql = "SELECT * FROM media  WHERE available = 0 ";
+      $result = $connect-> query($sql);
+
+            if($result-> num_rows > 0) { 
                 while($row = $result->fetch_assoc()) {
                    echo  "<tr>
-                    <td data-toggle='popover' data-placement='top' data-content='Do you want to know more about this title?'> ".$row['title']." </td>
+                    <td style='font-weight:bold' data-toggle='popover' data-placement='top' data-content='Do you want to know more about this title?'> ".$row['title']." </td>
 
                     <td data-toggle='popover' data-placement='top' data-content='Do you want to know more about this author?'> ".$row['author']." </td>
 
@@ -76,5 +78,6 @@ $(function () {
 </div>
 
 </div>
+
 </body>
 </html>
