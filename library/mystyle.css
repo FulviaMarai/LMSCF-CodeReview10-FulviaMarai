@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  width: 95%;
+  width: 90%;
 }
 
 .jumbotron {
@@ -21,8 +21,13 @@ body {
   width : 100%;
   padding: 15px;
   margin: auto;
-  background-color: ivory;
+  background-color: linen;
   text-align: center
+}
+
+.scheda {
+  padding: 20px;
+  height: 400px;
 }
 
 table {
@@ -36,12 +41,17 @@ label {
 }
 
  .bt  {
-        width: 150px;
-      }
+  width: 150px;
+}
 
 input {
-  background-color: mintcream;
+  background-color: ivory;
   width: 300px;
+}
+
+input textarea {
+  padding: 10px;
+  background-color: ivory;
 }
 
 .my-custom-scrollbar {
@@ -49,4 +59,14 @@ input {
   height: 200px;
   overflow: auto;
  } 
+
+ .cover {
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ .cover img {
+  height: 90%;
+ }
   
